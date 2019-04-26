@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd" 
+		xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://www.springframework.org/schema/beans">
+		
+<!-- 		On va utiliser les annotations -->
+<context:annotation-config>
+</context:annotation-config>
+
+<!-- Voici le chemin où se trouve les classes annotées -->
+<context:component-scan base-package="com.infotel.ProjetMavenJava"></context:component-scan>
+
+<bean id="devlog1" class="com.infotel.ProjetMavenJava.metier.Devlogiciel">
+	<property name="developpeur" ref="dev1"></property>	
+</bean>
+
+<bean id="devlog2" class="com.infotel.ProjetMavenJava.metier.Devlogiciel">
+	<property name="chefdeveloppeur" ref="dev2"></property>
+</bean>
+
+
+<bean id="dev1" class="com.infotel.ProjetMavenJava.metier.Dev">
+	<property name="idDev" value="1"/>
+	<property name="nom" value="Morel"></property>
+	<property name="experience" value="10"></property>	
+</bean>
+
+<bean id="dev2" class="com.infotel.ProjetMavenJava.metier.Dev">
+	<property name="idDev" value="2"/>
+	<property name="nom" value="Lurel"></property>
+	<property name="experience" value="5"></property>
+</bean>
+ </beans>
